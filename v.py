@@ -19,6 +19,7 @@ p2 = "<a:playtime1:907844078778081370>"
 token = "토큰"
 vchannel = "인증채널 ID"
 log = "로그채널 ID"
+wmsg = "환영메세지 채널ID"
 
 # 준비메세지/상태메세지
 @client.event
@@ -83,7 +84,7 @@ async def on_message(message):
                 embed = discord.Embed(title="성공", description="{}님이 인증에 성공하였습니다!".format(message.author.mention), color=0x43B481, timestamp=message.created_at)
                 await client.get_channel(int(log)).send(embed=embed)
 
-                channel = client.get_channel(907795611812761620)
+                channel = client.get_channel({wmsg})
                 await channel.send(f"안녕하세요, {message.author.mention}님! HYDev에 오신걸 환영합니다!\n\n> ※ <#907790078137487400> 채널에서 약관을 확인해주시길 바랍니다!\n> ※ 질문 및 답변은 <#907846171567988737> 채널에서 역할을 먼저 받아주세요.\n\n좋은 시간 보내시길 HYDev Korea가 기원합니다.\n{p1} **모두 새로 온 유저를 환영해주세요!** {p2}")
                 await message.author.add_roles(get(message.author.guild.roles, name="《　　Users　　》"))
                 lv = discord.Embed(title="인증성공", description="{} {}님, 인증이 완료 되었습니다.".format(s, message.author.mention), color=0x43B481, timestamp=message.created_at)
