@@ -19,7 +19,7 @@ p2 = "<a:playtime1:907844078778081370>"
 token = "토큰"
 vchannel = "인증채널 ID"
 log = "로그채널 ID"
-wmsg = "환영메세지 채널ID"
+wmsg = "환영 메세지/로그 채널ID"
 
 # 준비메세지/상태메세지
 @client.event
